@@ -1,20 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Featured from '../components/Featured.astro';
 ---
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br/>
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card href="https://docs.astro.build/" title="Documentation" body="Learn how Astro works and explore the official API docs." /> 
-			<Card href="https://astro.build/integrations/" title="Integrations" body="Supercharge your project with new frameworks and libraries." /> 
-			<Card href="https://astro.build/themes/" title="Themes" body="Explore a galaxy of community-built starter themes." /> 
-			<Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" />
-		</ul>
+	<main class="w-full h-full overflow-y-scroll snap-y snap-mandatory">
+		<Featured id="home" type="image" path="teste.jpg">
+			<div class=" flex flex-col h-screen justify-center">
+				<h1 class="text-6xl ml-24 mb-12">Bem vindo!</h1>
+				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<div class="h-0.5 w-8/12 bg-black"></div>
+				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
+			</div>
+
+		</Featured>
+		<Featured id="photos" type="image" path="sample2.jpg">
+			<div class=" flex flex-col h-screen justify-center">
+				<h1 class="text-6xl ml-24 mb-12">Fotos!</h1>
+				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<div class="h-0.5 w-8/12 bg-black"></div>
+				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
+			</div>
+		</Featured>
+		<Featured id="videos" type="video" path="teste.mp4">
+			<div class=" flex flex-col h-screen justify-center">
+				<h1 class="text-6xl ml-24 mb-12">Videos!</h1>
+				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<div class="h-0.5 w-8/12 bg-black"></div>
+				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
+			</div>
+		</Featured>
+		<Featured id="contact" type="image" path="sample3.jpg">
+			<div class=" flex flex-col h-screen justify-center">
+				<h1 class="text-6xl ml-24 mb-12">Fale connosco!</h1>
+				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<div class="h-0.5 w-8/12 bg-black"></div>
+				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
+			</div>
+		</Featured>
 	</main>
 </Layout>
 
@@ -23,14 +45,8 @@ import Card from '../components/Card.astro';
 		--astro-gradient: linear-gradient(0deg,#4F39FA, #DA62C4);
 	}
 
-	h1 {
-		margin: 2rem 0;
-	}
-
 	main {
 		margin: auto;
-    	padding: 1em;
-		max-width: 60ch;
 	}
 
 	.text-gradient {
