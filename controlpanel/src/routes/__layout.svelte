@@ -5,7 +5,7 @@
 </script>
 
 <Navbar />
-<main class="h-screen">
+<main class="container flex flex-wrap items-start content-start mx-auto">
 	<slot />
 </main>
 <Footer />
