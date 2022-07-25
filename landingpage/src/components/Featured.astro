@@ -12,8 +12,7 @@ const {type, path, id} = Astro.props;
 ---
 
 <section id={id} class="flex h-screen relative snap-start">
-    <div class="flex w-4/12">
-        <Navigation />
+    <div class="flex w-4/12 pl-12">
         <slot />
     </div>
     <div class="flex w-8/12 relative">
