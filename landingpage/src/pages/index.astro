@@ -1,42 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Featured from '../components/Featured.astro';
+import { albums } from '../config/db';
+
 ---
 <Layout title="Welcome to Astro.">
 	<main class="w-full h-full overflow-y-scroll snap-y snap-mandatory">
-		<Featured id="home" type="image" path="teste.jpg">
-			<div class=" flex flex-col h-screen justify-center">
-				<h1 class="text-6xl ml-24 mb-12">Bem vindo!</h1>
-				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<div class="h-0.5 w-8/12 bg-black"></div>
-				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
-			</div>
-
-		</Featured>
-		<Featured id="photos" type="image" path="sample2.jpg">
-			<div class=" flex flex-col h-screen justify-center">
-				<h1 class="text-6xl ml-24 mb-12">Fotos!</h1>
-				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<div class="h-0.5 w-8/12 bg-black"></div>
-				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
-			</div>
-		</Featured>
-		<Featured id="videos" type="video" path="teste.mp4">
-			<div class=" flex flex-col h-screen justify-center">
-				<h1 class="text-6xl ml-24 mb-12">Videos!</h1>
-				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<div class="h-0.5 w-8/12 bg-black"></div>
-				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
-			</div>
-		</Featured>
-		<Featured id="contact" type="image" path="sample3.jpg">
-			<div class=" flex flex-col h-screen justify-center">
-				<h1 class="text-6xl ml-24 mb-12">Fale connosco!</h1>
-				<p class="text-xl ml-24 mb-12 leading-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<div class="h-0.5 w-8/12 bg-black"></div>
-				<button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver Albums</button>
-			</div>
-		</Featured>
+		{albums && albums.map((album) => {
+            return (
+                <Featured id="home" type="image" path={album.featured.path}>
+                    <div class=" flex flex-col h-screen justify-center">
+                        <h1 class="text-6xl ml-24 mb-12">{album.name}</h1>
+                        <p class="text-xl ml-24 mb-12 leading-10">{album.description}</p>
+                        <div class="h-0.5 w-8/12 bg-black"></div>
+                        <a href={`/album/${album.id}`}><button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver todas as fotos</button></a>
+                    </div>
+                </Featured>
+            )
+        })}
 	</main>
 </Layout>
 
