@@ -31,7 +31,6 @@ interface QueryProps {
 }
 
 const query = (type: Query, props: QueryProps = {}) => {
-	console.log(props);
 	const queries = {
 		all: `
 			query {

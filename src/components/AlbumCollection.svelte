@@ -1,7 +1,6 @@
 <script lang="ts">
     export let album;
 
-    console.log(album);
     // Components
     import Modal from './Modal.svelte';
     import Image from './Image.svelte';

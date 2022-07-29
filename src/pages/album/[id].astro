@@ -1,12 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import AlbumCollection from '../../components/AlbumCollection.svelte';
+import Password from '../../components/Password.svelte';
 import { fromUnix } from '../../config/utilities';
 import { paths, GetAlbum } from '../../config/db';
 
 const { id } = Astro.params;
 const data = await GetAlbum(String(id));
-console.log(data);
 
 let activeImg = {
     path: '',
@@ -14,19 +14,19 @@ let activeImg = {
 };
 
 const handleImagePreview = (path: string, name: string) => {
-    console.log(name);
     activeImg = {
         path: path,
         name: name
     }
 }
 
-console.log(activeImg);
-
 export function getStaticPaths() {
     return [paths];
 }
 ---
+
+<Password password={data.password} client:load />
+
 
 <Layout title={data.name}>
     <div class="w-full h-screen">
