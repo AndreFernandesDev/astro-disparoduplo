@@ -209,16 +209,17 @@ const mutations = (type: MutationTypes, action: MutationActions) => {
 };
 
 // Exports
-const GetAlbums = async () => {
+const LocalGetAlbums = async () => {
 	const response = await fetchData(query(Query.all));
 	return response.data.albums;
 };
 
-const localAlbums = await GetAlbums();
+const localAlbums = await LocalGetAlbums();
 const localPaths = localAlbums.map((album) => {
 	return { params: { id: album.id } };
 });
 
+export const GetAlbums = LocalGetAlbums;
 export const albums = localAlbums;
 export const paths = localPaths;
 
