@@ -23,7 +23,7 @@
 {:else if type == "click"}
     <input type="checkbox" id={id} class="modal-toggle" />
     <label for={id} class="modal cursor-pointer">
-        <div class="modal-box m-0 lg:m-24 p-0 w-full max-w-full lg:h-screen {extraClass}">
+        <div class="modal-box m-0 lg:m-24 p-0 w-full max-w-full h-screen {extraClass}">
             <slot />
         </div>
     </label>
