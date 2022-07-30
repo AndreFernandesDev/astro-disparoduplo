@@ -6,7 +6,7 @@ import { albums } from '../config/db';
 
 <Layout title="Albums de casamentos no Algarve">
 	<main class="lg:w-full min-h-screen flex flex-wrap lg:p-24 justify-center lg:justify-start pb-36 lg:pb-0">
-        <h1 class='w-2/3 lg:w-full pb-4 text-xl lg:text-6xl text-center'>Os nossos momentos</h1>
+        <h1 class='w-2/3 lg:w-full pb-4 mt-6 lg:mt-0 text-4xl lg:text-6xl text-center'>Os nossos momentos</h1>
         <h2 class='w-2/3 lg:w-full pb-4 text-lg lg:text-xl text-slate-600 text-center'>Pedacinhos da nossa historia para recordar para sempre</h2>
 		{albums && albums.map((album) => {
             return (
@@ -20,7 +20,7 @@ import { albums } from '../config/db';
 
                         </div>
                         <div class="relative w-full flex justify-between bg-white rounded-b-lg py-3 px-4">
-                            <h2 class="text-md">{album.name}</h2><h3 class="text-sm border-l-2 pl-4">{fromUnix(album.date)}</h3>
+                            <h2 class="text-xs lg:text-md">{album.name}</h2><h3 class="text-xs lg:text-sm border-l-2 pl-4">{fromUnix(album.date)}</h3>
                         </div>
                     </a>
                 </div>
