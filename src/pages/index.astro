@@ -7,8 +7,8 @@ import { albums } from '../config/db';
 	<main class="w-full h-full overflow-y-scroll snap-y snap-mandatory">
 
         <Featured id="home" type="image" path="hero2.webp">
-                <div class="flex flex-col w-full justify-center items-center lg:items-left">
-                    <img class="w-11/12 object-contain mb-6 lg:mb-12" src="logo2.png">
+                <div class="flex flex-col w-full lg:justify-center items-center lg:items-left">
+                    <img class="w-11/12 object-contain mb-3 lg:mb-6 lg:mb-12" src="logo2.png">
 
                     <h1 class="text-3xl lg:text-5xl lg:ml-24 mb-2 lg:mb-6">Sabe mais sobre nós</h1>
                     <p class="w-2/3 lg:w-full text-md lg:text-xl lg:ml-24 mb-6 lg:mb-12 lg:leading-10 text-center lg:text-left">Focamo-nos em criar momentos que duram para sempre.</p>
@@ -20,9 +20,9 @@ import { albums } from '../config/db';
 		{albums && albums.map((album) => {
             return (
                 <Featured id="home" type="image" path={album.featured ? album.featured.path : ""}>
-                    <div class=" flex w-full flex-col lg:h-screen justify-center items-center lg:items-left">
+                    <div class=" flex w-full flex-col lg:h-screen lg:justify-center items-center lg:items-left">
                         <h1 class="text-3xl w-10/12 lg:w-full text-center lg:text-left lg:text-6xl lg:ml-24 mb-6 lg:mb-12">{album.name}</h1>
-                        {album.description && <p class="text-xl lg:ml-24 mb-6 lg:mb-12 leading-10">{album.description}</p>}
+                        {album.description && <p class="w-2/3 lg:w-full text-xl lg:ml-24 mb-6 lg:mb-12 leading-10">{album.description}</p>}
                         <div class="h-0.5 w-7/12 lg:w-8/12 bg-black"></div>
                         <a href={`/album/${album.id}`}><button class="text-white w-48 mt-6 lg:ml-24 py-3 bg-black text-lg">Ver todas as fotos</button></a>
                     </div>
