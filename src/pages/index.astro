@@ -5,6 +5,35 @@ import { albums } from '../config/db';
 ---
 <Layout title="Welcome to Astro.">
 	<main class="w-full h-full overflow-y-scroll snap-y snap-mandatory">
+        <!-- <Featured id="home" type="image" path="hero2.webp">
+            <div class=" flex flex-wrap w-screen h-screen justify-stretch">
+                <div class="flex w-full justify-center">
+                <img class="w-11/12 object-contain" src="logo2.png">
+
+                </div>
+                <div class="flex flex-col w-full justify-center items-left">
+                    <h1 class="text-5xl ml-24 mb-6">Sabe mais sobre nos</h1>
+                    <p class="text-xl ml-24 mb-12 leading-10">Focamo-nos em criar momentos que duram para sempre.</p>
+                    <div class="h-0.5 w-8/12 bg-black"></div>
+                    <a href={`/albums`}><button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver todos os albums</button></a>
+                </div>
+
+            </div>
+        </Featured> -->
+
+        <Featured id="home" type="image" path="hero2.webp">
+
+                <div class="flex flex-col w-full justify-center items-left">
+                    <img class="w-11/12 object-contain mb-12" src="logo2.png">
+
+                    <h1 class="text-5xl ml-24 mb-6">Sabe mais sobre nós</h1>
+                    <p class="text-xl ml-24 mb-12 leading-10">Focamo-nos em criar momentos que duram para sempre.</p>
+                    <div class="h-0.5 w-8/12 bg-black"></div>
+                    <a href={`/albums`}><button class="text-white w-48 mt-6 ml-24 py-3 bg-black text-lg">Ver todos os albums</button></a>
+                </div>
+
+        </Featured>
+
 		{albums && albums.map((album) => {
             return (
                 <Featured id="home" type="image" path={album.featured ? album.featured.path : ""}>
