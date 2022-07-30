@@ -12,9 +12,9 @@
 
 
 {#if type == "clickOutside"}
-    <input type="checkbox" id={id} class="modal-toggle" />
+    <input type="checkbox" id={id} class="modal-toggle w-full" />
     <label for={id} class="modal cursor-pointer">
-        <label class="modal-box m-24 p-0 w-3/5 max-w-full relative {extraClass}" for="">
+        <label class="modal-box m-0 lg:m-24 p-0 lg:w-3/5 max-w-full relative {extraClass}" for="">
             <div class="p-6">
                 <slot />
             </div>
@@ -23,7 +23,7 @@
 {:else if type == "click"}
     <input type="checkbox" id={id} class="modal-toggle" />
     <label for={id} class="modal cursor-pointer">
-        <div class="modal-box m-24 p-0 w-full max-w-full h-screen {extraClass}">
+        <div class="modal-box m-0 lg:m-24 p-0 w-full max-w-full lg:h-screen {extraClass}">
             <slot />
         </div>
     </label>

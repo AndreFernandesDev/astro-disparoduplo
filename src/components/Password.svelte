@@ -24,7 +24,7 @@
 
 {#if password}
     <input type="checkbox" id="my-modal" class="modal-toggle" />
-    <div class="modal {open === true ? 'modal-open bg-white' : ''} ml-12">
+    <div class="modal {open === true ? 'modal-open bg-white' : ''} lg:ml-12">
         <div class="modal-box flex flex-col content-center items-center">
             <h3 class="font-bold text-lg">Album Privado</h3>
             <p class="pb-4">Insira a senha para ver todas as fotos</p>
